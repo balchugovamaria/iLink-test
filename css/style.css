@@ -132,7 +132,8 @@ form {
 .block3 {
   visibility: hidden;
 }
-label {
+label,
+input-item {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -234,6 +235,12 @@ input:valid {
   margin-top: 24px;
   margin-bottom: 24px;
   cursor: pointer;
+}
+.btn-input-file:disabled {
+  color: #d9bbff;
+  background: #ffffff;
+  border: 1px solid #d9bbff;
+  cursor: default;
 }
 .slider {
   width: 100%;
@@ -361,6 +368,7 @@ input:valid {
 .submit:disabled {
   background: #ded9e4;
   border-radius: 12px;
+  cursor: default;
 }
 .completed {
   vertical-align: middle;
@@ -382,4 +390,8 @@ input:valid {
 }
 .open {
   display: block;
+}
+
+.input-item {
+  display: inline-block;
 }

@@ -11,16 +11,21 @@ const btnFile = document.querySelector(".btn-input-file");
 const btnSubmit = document.querySelector(".submit");
 
 
-gender.onclick = function(){
-  genderList.style.display = "block";
-  liGenders.forEach(li => {
-    li.onclick = function() {
-      gender.value = li.textContent;
-      block2.style.visibility="visible";
-      genderList.style.display = "none";
-    }
-  });
-}
+document.addEventListener('click', e => {
+  const target = e.target;
+
+  if (target.classList.contains('gender')) {
+    genderList.classList.add('open');
+  }
+
+  if (target.classList.contains('genders-item')) {
+    genderList.classList.remove('open');
+    gender.value = target.textContent;
+    block2.style.visibility="visible";
+  }
+})
+
+
 
 btnFile.onclick = function(){
   document.querySelector(".file-list").style.visibility = "visible";
@@ -30,6 +35,7 @@ btnFile.onclick = function(){
 btnSubmit.onclick = function(){
   btnSubmit.disabled = true;
   document.querySelector(".completed").style.display = "inline-block";
+  btnFile.disabled = true;
 }
 
 
