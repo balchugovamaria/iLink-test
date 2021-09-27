@@ -1,6 +1,9 @@
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 const slides = document.querySelectorAll(".slider > img");
+const miniPrevBtn = document.querySelector(".slidermini .prev-btn");
+const miniNextBtn = document.querySelector(".slidermini .next-btn");
+const miniSlides = document.querySelectorAll(".slidermini > img");
 const gender = document.querySelector("#gender");
 const birth = document.querySelector("#birth");
 const block2 = document.querySelector(".block2");
@@ -62,4 +65,23 @@ prevBtn.addEventListener('click', () => {
     i = slides.length - 1;
   }
   slides[i].style.display="inline-block";
+})
+
+//minislider
+miniNextBtn.addEventListener('click', () => {
+  miniSlides[i].style.display = "none";
+  i = i+1;
+  if(i >= miniSlides.length){
+   i = 0;
+  }
+  miniSlides[i].style.display = "inline-block";
+})
+
+miniPrevBtn.addEventListener('click', () => {
+  miniSlides[i].style.display= "none";
+  i = i-1;
+  if(i < 0) {
+    i = miniSlides.length - 1;
+  }
+  miniSlides[i].style.display="inline-block";
 })
