@@ -133,7 +133,7 @@ form {
   visibility: hidden;
 }
 label,
-input-item {
+.input-item {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
